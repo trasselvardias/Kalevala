@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173b34">
+  <meta name="description" content="The complete Kalevala in Finnish and English, with narrative summaries and the Tietäjä guide.">
+  <title>Kalevala — viisikymmentä runoa</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Kalevala"><img src="icon.svg" alt=""><span>KALEVALA</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home" data-fi="Etusivu" data-en="Home">Etusivu</a>
+      <a href="#runes" data-fi="Runot" data-en="Runes">Runot</a>
+      <a href="#search" data-fi="Haku" data-en="Search">Haku</a>
+      <a href="#guide" data-fi="Tietäjä" data-en="Guide">Tietäjä</a>
+      <a href="#saved" data-fi="Tallennetut" data-en="Saved">Tallennetut</a>
+    </nav>
+    <div class="toolbar">
+      <button id="theme-button" title="Theme" aria-label="Toggle theme">◐</button>
+      <button id="language-button" aria-label="Switch language">EN</button>
+      <a class="download compact" href="download/Kalevala-1.2.1-debug.apk" data-fi="Lataa sovellus" data-en="Download app">Lataa sovellus</a>
+    </div>
+  </header>
+  <main id="app" tabindex="-1"><p class="loading">Ladataan Kalevalaa…</p></main>
+  <footer><span data-fi="Tekijä: Trassel Vardias" data-en="Created by Trassel Vardias">Tekijä: Trassel Vardias</span><span>Kalevala 1.2.1</span></footer>
+  <dialog id="line-dialog"><button class="dialog-close" aria-label="Close">×</button><div id="line-dialog-content"></div></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
