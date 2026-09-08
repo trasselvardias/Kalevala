@@ -163,7 +163,7 @@ function runeCards(list) {
   }).join('');
 }
 function runesView() {
-  return `<div class="heading-row"><div><p class="eyebrow">${tr('Koko teos','Complete work')}</p><h1>${tr('Viisikymmentä runoa','Fifty runes')}</h1></div><p class="muted">${tr('Puhelimella yksi sarake, tabletilla kaksi.','One column on phones, two on tablets.')}</p></div><input class="search-input" id="rune-filter" type="search" placeholder="${tr('Etsi numerolla tai nimellä','Find by number or title')}" aria-label="${tr('Etsi runoa','Find a rune')}"><div class="grid" id="rune-grid">${runeCards(corpus().runes)}</div>`;
+  return `<div class="heading-row"><div><p class="eyebrow">${tr('Koko teos','Complete work')}</p><h1>${tr('Viisikymmentä runoa','Fifty runes')}</h1></div><p class="muted">${tr('Valitse runo tai jatka siitä, mihin jäit.','Choose a rune or continue where you left off.')}</p></div><input class="search-input" id="rune-filter" type="search" placeholder="${tr('Etsi numerolla tai nimellä','Find by number or title')}" aria-label="${tr('Etsi runoa','Find a rune')}"><div class="grid" id="rune-grid">${runeCards(corpus().runes)}</div>`;
 }
 
 function readerView(parts) {
@@ -252,7 +252,11 @@ function render() {
   bind(route); app.focus({preventScroll:true});
 }
 
-document.querySelector('#language-button').onclick=()=>{state.lang=state.lang==='fi'?'en':'fi';save();wordIndexLanguage='';render()};
+document.querySelector('#language-button').onclick=()=>{
+  const route=(location.hash.slice(1)||'home').split('/');
+  if(route[0]==='reader') switchReaderLanguage(Number(route[2]||1),Number(route[3]||0));
+  else {state.lang=state.lang==='fi'?'en':'fi';save();wordIndexLanguage='';render()}
+};
 document.querySelector('#theme-button').onclick=()=>{state.theme=state.theme==='light'?'dark':'light';save();applyChrome()};
 document.querySelector('.dialog-close').onclick=()=>lineDialog.close();
 lineDialog.addEventListener('click',event=>{if(event.target===lineDialog)lineDialog.close()});

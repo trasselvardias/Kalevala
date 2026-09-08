@@ -4,3 +4,6 @@
 @media(max-width:850px){.topbar{flex-wrap:wrap;gap:6px}.brand span{display:none}nav{order:3;width:100%;justify-content:center;overflow:auto}.compact{padding:8px 10px}.hero{grid-template-columns:1fr}.hero-mark{max-width:430px;margin:auto}.heading-row{align-items:start;flex-direction:column}.line{grid-template-columns:34px 1fr 16px}}
 @media(min-width:700px) and (max-width:1050px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:540px){nav a{padding:8px 7px;font-size:.9rem}.toolbar{gap:1px}.toolbar button{padding:8px}.download.compact{font-size:0;width:38px;height:38px}.download.compact::after{content:'↓';font-size:1.1rem}.line-number{display:none}.line{grid-template-columns:1fr 16px}.hero-mark{display:none}footer{flex-direction:column;text-align:center}}
+
+.daily+section{margin-top:clamp(48px,8vw,84px)}
+@media(max-width:540px){.download.compact{width:auto;height:auto;padding:8px 10px;font-size:.88rem}.download.compact::after{content:none}.line-number{display:block}.line{grid-template-columns:34px 1fr 16px}}
